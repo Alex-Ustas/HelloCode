@@ -1,30 +1,42 @@
-﻿int number = 12;
+﻿// Игра угадай число
+Console.WriteLine("Game started");
 
-Console.WriteLine("Quantity " + number + number);
-Console.WriteLine("Quantity " + (number + number));
+int secret_number = new Random().Next(1, 11);
+int attempt = 5;
+bool win = false;
 
-string s = number.ToString();
-Console.WriteLine(s);
-
-Console.Write("Enter your name ");
-string name = Console.ReadLine();
-Console.WriteLine("Hi, " + name);
-
-Console.Write("Enter your age ");
-int age = int.Parse(Console.ReadLine());
-
-int a = int.Parse(Console.ReadLine());
-int b = int.Parse(Console.ReadLine());
-
-if (a > b)
+while (attempt > 0)
 {
-    Console.WriteLine("A > B");
+    Console.Write("Enter num 1-10: ");
+    int user_number = int.Parse(Console.ReadLine());
+    //Console.WriteLine(user_number);
+
+    if (user_number > secret_number)
+    {
+        Console.WriteLine("Секретное число меньше");
+        attempt--;
+    }
+    else if (user_number < secret_number)
+    {
+        Console.WriteLine("Секретное число больше");
+        attempt--;
+    }
+    else if (user_number == secret_number)
+    {
+        Console.WriteLine("Число угадано");
+        win = true;
+        break;
+    }
 }
-else if (a < b)
+
+if (win)
 {
-    Console.WriteLine("A < B");
+    Console.WriteLine("Мы победили!");
+    Console.WriteLine("Осталось попыток: " + (attempt - 1));
 }
 else
 {
-    Console.WriteLine("A = B");
+    Console.WriteLine("Мы проиграли!");
+    Console.WriteLine("Секретное число - " + secret_number);
+
 }
