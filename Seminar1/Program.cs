@@ -1,9 +1,14 @@
 ﻿int number = 12;
-string name = "John Doll";
-float pi = 3.1415926f;
-double b = 11.22;
 
-bool  flag = true; // false
-char sym = 'a';
+Console.WriteLine("Quantity " + number + number);
+Console.WriteLine("Quantity " + (number + number));
 
-var something = "dghdgfh"; // variable
+string s = number.ToString();
+Console.WriteLine(s);
+
+Console.Write("Enter your name ");
+string name = Console.RadLine();
+Console.WriteLine("Hi, " + name);
+
+Console.Write("Enter your age ");
+int age = int.Parse(Console.ReadLine());
