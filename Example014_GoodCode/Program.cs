@@ -29,7 +29,3 @@ for (int i = 0; i < data.Length; i++)
 {
     Console.WriteLine(data[i]);
 }
-
-///
-/// Вычисление координаты
-///
